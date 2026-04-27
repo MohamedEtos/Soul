@@ -1,9 +1,8 @@
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>{{ $title ?? 'Lubablu'}}</title>
-<meta name="description" content="{{ $description ?? 'متجر لونا بلو للملابس' }}">
+<meta name="description" content="{{ $description ?? 'متجر سول للملابس' }}">
 <meta name="theme-color" content="#ffffff">
 
 
@@ -17,17 +16,19 @@
 <link rel="manifest" href="{{ asset('store/images/icons/site.webmanifest') }}">
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ $title ?? 'LunaBlu|لونا بلو' }}">
-<meta property="og:description" content="{{ $description ?? 'متجر لونا بلو للملابس' }}">
-<meta property="og:image" content="{{ !empty($image) ? (str_starts_with($image, 'http') ? $image : asset($image)) : asset('store/images/icons/logo-02.png') }}">
+<meta property="og:title" content="{{ $title ?? 'Soul|سول' }}">
+<meta property="og:description" content="{{ $description ?? 'متجر سول للملابس' }}">
+<meta property="og:image"
+  content="{{ !empty($image) ? (str_starts_with($image, 'http') ? $image : asset($image)) : asset('store/images/icons/logo-02.png') }}">
 <meta property="og:url" content="{{ $url ?? url()->current() }}">
 <meta property="og:type" content="website">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $title ?? 'LunaBlu|لونا بلو' }}">
-<meta name="twitter:description" content="{{ $description ?? 'متجر لونا بلو للملابس' }}">
-<meta name="twitter:image" content="{{ !empty($image) ? (str_starts_with($image, 'http') ? $image : asset($image)) : asset('store/images/icons/logo-02.png') }}">
+<meta name="twitter:title" content="{{ $title ?? 'Soul|سول' }}">
+<meta name="twitter:description" content="{{ $description ?? 'متجر سول للملابس' }}">
+<meta name="twitter:image"
+  content="{{ !empty($image) ? (str_starts_with($image, 'http') ? $image : asset($image)) : asset('store/images/icons/logo-02.png') }}">
 
 
 <!-- Facebook -->
@@ -39,19 +40,20 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
   src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=1882574705681621">
-</script>
+  </script>
 
 
-{{-- <script>
-    FB.api(
-  '/me',
-  'GET',
-  {"fields":"id,short_name"},
-  function(response) {
+{{--
+<script>
+  FB.api(
+    '/me',
+    'GET',
+    { "fields": "id,short_name" },
+    function (response) {
       // Insert your code here
-  }
-);
-    </script> --}}
+    }
+  );
+</script> --}}
 
 
 
@@ -66,14 +68,14 @@
 <meta name="msvalidate.01" content="7250B913D4CB255075A09A239EE816C1" />
 {{-- yandex --}}
 <meta name="yandex-verification" content="c9c7a3de33a4aae9" />
-{{-- seo google meta  --}}
+{{-- seo google meta --}}
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="noai, noimageai">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPZ3P2T6KM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-RPZ3P2T6KM');
@@ -86,5 +88,3 @@
 
 {{-- ajax csrf token --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
-

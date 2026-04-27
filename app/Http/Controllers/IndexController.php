@@ -30,11 +30,11 @@ class IndexController extends Controller
 
             //  أعمدة المنتج نفسها
             $q->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('price', 'LIKE', "%{$search}%")
-            ->orWhere('productDetalis', 'LIKE', "%{$search}%")
-            ->orWhere('meta_title', 'LIKE', "%{$search}%")
-            ->orWhere('meta_description', 'LIKE', "%{$search}%")
-            ->orWhere('slug', 'LIKE', "%{$search}%");
+                ->orWhere('price', 'LIKE', "%{$search}%")
+                ->orWhere('productDetalis', 'LIKE', "%{$search}%")
+                ->orWhere('meta_title', 'LIKE', "%{$search}%")
+                ->orWhere('meta_description', 'LIKE', "%{$search}%")
+                ->orWhere('slug', 'LIKE', "%{$search}%");
 
             //  أعمدة العلاقات (حسب اللي موجود فعلاً في جداولهم)
             foreach ($relations as $relation) {
@@ -57,9 +57,9 @@ class IndexController extends Controller
             'products' => $products,
             'fabrics' => $fabrics,
             'setting' => $setting,
-            'title' => 'LunaBlu|لونا بلو | متجر طرح عصرية – خامات فاخرة وأسعار مناسبة',
-            'description' => 'LunaBlu|لونا بلو متجر متخصص في بيع الطرح الطرح العصرية بخامات عالية وجودة مميزة. اكتشفي أحدث الموديلات والألوان المناسبة لكل الإطلالات مع أسعار تنافسية وتجربة تسوق سهلة وآمنة.',
-            'image' =>  asset('store/images/icons/favicon.ico'),
+            'title' => 'Soul|سول | متجر طرح عصرية – خامات فاخرة وأسعار مناسبة',
+            'description' => 'Soul|سول متجر متخصص في بيع الطرح الطرح العصرية بخامات عالية وجودة مميزة. اكتشفي أحدث الموديلات والألوان المناسبة لكل الإطلالات مع أسعار تنافسية وتجربة تسوق سهلة وآمنة.',
+            'image' => asset('store/images/icons/favicon.ico'),
             'url' => url()->current(),
         ]);
     }

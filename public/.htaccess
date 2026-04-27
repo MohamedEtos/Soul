@@ -6,8 +6,8 @@
     RewriteEngine On
 
     # ✅ تحويل www إلى non-www
-    RewriteCond %{HTTP_HOST} ^www\.LunaBlu|لونا بلو\.store$ [NC]
-    RewriteRule ^(.*)$ https://LunaBlu|لونا بلو.store/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^www\.Soul|سول\.store$ [NC]
+    RewriteRule ^(.*)$ https://Soul|سول.store/$1 [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

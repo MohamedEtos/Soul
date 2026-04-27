@@ -27,11 +27,11 @@ class ProductController extends Controller
 
             //  أعمدة المنتج نفسها
             $q->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('price', 'LIKE', "%{$search}%")
-            ->orWhere('productDetalis', 'LIKE', "%{$search}%")
-            ->orWhere('meta_title', 'LIKE', "%{$search}%")
-            ->orWhere('meta_description', 'LIKE', "%{$search}%")
-            ->orWhere('slug', 'LIKE', "%{$search}%");
+                ->orWhere('price', 'LIKE', "%{$search}%")
+                ->orWhere('productDetalis', 'LIKE', "%{$search}%")
+                ->orWhere('meta_title', 'LIKE', "%{$search}%")
+                ->orWhere('meta_description', 'LIKE', "%{$search}%")
+                ->orWhere('slug', 'LIKE', "%{$search}%");
 
             //  أعمدة العلاقات (حسب اللي موجود فعلاً في جداولهم)
             foreach ($relations as $relation) {
@@ -46,22 +46,22 @@ class ProductController extends Controller
 
         // Price Filter
         if ($min_price !== null && $max_price !== null) {
-            $query->whereBetween('price', [(float)$min_price, (float)$max_price]);
+            $query->whereBetween('price', [(float) $min_price, (float) $max_price]);
         } elseif ($min_price !== null) {
-            $query->where('price', '>=', (float)$min_price);
+            $query->where('price', '>=', (float) $min_price);
         } elseif ($max_price !== null) {
-            $query->where('price', '<=', (float)$max_price);
+            $query->where('price', '<=', (float) $max_price);
         }
 
         // Sorting
         switch ($sort) {
             case 'popularity':
                 // Assuming we have a 'views' or 'sales_count' column, otherwise default to latest
-                 $query->orderBy('views', 'desc'); 
+                $query->orderBy('views', 'desc');
                 break;
             case 'rating':
                 // Assuming rating column logic
-                 $query->latest();
+                $query->latest();
                 break;
             case 'newness':
                 $query->latest();
@@ -86,9 +86,9 @@ class ProductController extends Controller
         return view('store.product', [
             'products' => $products,
             'fabrics' => $fabrics,
-            'title' => 'LunaBlu|لونا بلو | متجر ملابس طرح عصرية – خامات فاخرة وأسعار مناسبة',
-            'description'=>'تسوّق أحدث المنتجات بجودة عالية وأسعار مميزة. اكتشف تشكيلتنا المتنوعة التي تناسب جميع الأذواق مع تجربة شراء سهلة وآمنة.',
-            'image' =>  asset('store/images/icons/favicon.png'),
+            'title' => 'Soul|سول | متجر ملابس طرح عصرية – خامات فاخرة وأسعار مناسبة',
+            'description' => 'تسوّق أحدث المنتجات بجودة عالية وأسعار مميزة. اكتشف تشكيلتنا المتنوعة التي تناسب جميع الأذواق مع تجربة شراء سهلة وآمنة.',
+            'image' => asset('store/images/icons/favicon.png'),
             'url' => url()->current(),
         ]);
     }
@@ -101,12 +101,12 @@ class ProductController extends Controller
 
 
 
-        return view('store.productshow',[
+        return view('store.productshow', [
             'product' => $product,
             'products' => $products,
-            'title' => $product->name . ' | LunaBlu|لونا بلو',
-            'description' =>$product->slug . '||' . $product->productDetalis,
-            'image' =>  $product->product_img_p->mainImage,
+            'title' => $product->name . ' | Soul|سول',
+            'description' => $product->slug . '||' . $product->productDetalis,
+            'image' => $product->product_img_p->mainImage,
             'url' => url()->current(),
         ]);
 
