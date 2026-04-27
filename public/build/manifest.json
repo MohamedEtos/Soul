@@ -1,0 +1,49 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-L7nFKm5W.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot": {
+    "file": "assets/fontawesome-webfont-G5YE5S7X.eot",
+    "src": "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot"
+  },
+  "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg": {
+    "file": "assets/fontawesome-webfont-BA1xjjzB.svg",
+    "src": "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg"
+  },
+  "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf": {
+    "file": "assets/fontawesome-webfont-CQDK8MU3.ttf",
+    "src": "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf"
+  },
+  "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff": {
+    "file": "assets/fontawesome-webfont-CDK5bt4p.woff",
+    "src": "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff"
+  },
+  "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2": {
+    "file": "assets/fontawesome-webfont-B-jkhYfk.woff2",
+    "src": "resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2"
+  },
+  "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf": {
+    "file": "assets/Material-Design-Iconic-Font-CzPeeGu0.ttf",
+    "src": "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf"
+  },
+  "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.woff": {
+    "file": "assets/Material-Design-Iconic-Font-Ban8V9I0.woff",
+    "src": "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.woff"
+  },
+  "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2": {
+    "file": "assets/Material-Design-Iconic-Font-DXNmxXJ9.woff2",
+    "src": "resources/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

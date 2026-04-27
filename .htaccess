@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # لا تعملش redirect لمسارات داخلية
+    RewriteBase /
+
+    # أي طلب يروح على public/ (rewrite داخلي مش redirect)
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

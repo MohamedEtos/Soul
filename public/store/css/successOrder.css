@@ -1,0 +1,219 @@
+    :root{
+      --bg1:#F0287D;
+      --bg2:#ac1a57;
+      --card:#F0287D;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#22c55e;
+    }
+
+    body{
+      min-height:100vh;
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(238, 34, 146, 0.16), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(255, 14, 126, 0.2), transparent 55%),
+        radial-gradient(900px 700px at 50% 90%, rgba(255, 4, 192, 0.14), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      color:var(--text);
+      overflow:hidden;
+      font-family: "Tajawal", "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* FX layers */
+    #fx, #glowFx{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+    }
+    #glowFx{ z-index: 0; opacity:.9; }
+    #fx{ z-index: 1; }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      position:relative;
+      z-index:2;
+    }
+
+    .cardx{
+      width:100%;
+      max-width:760px;
+      /* background:var(--card); */
+      /* border:1px solid rgba(255,255,255,.08); */
+      border-radius:20px;
+      /* box-shadow: 0 18px 60px rgba(0,0,0,.45); */
+      padding:24px;
+      /* backdrop-filter: blur(1px); */
+    }
+
+    .title{ font-weight:900; font-size:28px; margin:0 0 6px; }
+    .subtitle{ color:var(--muted); margin:0 0 18px; }
+
+    .scene{
+      position:relative;
+      height:340px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 6px 0 18px;
+    }
+
+    /* Gift */
+    .gift{
+      position:relative;
+      width:190px;
+      height:170px;
+      transform: translateY(12px);
+      filter: drop-shadow(0 18px 22px rgba(255, 29, 105, 0.42));
+      cursor:pointer;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gift.idle{ animation: idle 1.4s ease-in-out infinite; }
+    @keyframes idle{
+      0%,100%{ transform: translateY(12px) rotate(-1deg); }
+      50%{ transform: translateY(2px) rotate(1deg); }
+    }
+
+    .gift.shake{ animation: shake .42s ease-out 1; }
+    @keyframes shake{
+      0%{ transform: translateY(12px) rotate(0); }
+      20%{ transform: translateY(8px) rotate(-2deg); }
+      45%{ transform: translateY(10px) rotate(2deg); }
+      70%{ transform: translateY(6px) rotate(-1deg); }
+      100%{ transform: translateY(8px) rotate(0); }
+    }
+
+    .box{
+      position:absolute;
+      bottom:0; left:0; right:0;
+      height:125px;
+      border-radius:18px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.14);
+      overflow:hidden;
+    }
+    .stripe-v{
+      position:absolute;
+      left:50%;
+      top:0; bottom:0;
+      width:24px;
+      transform:translateX(-50%);
+      background: linear-gradient(180deg, rgba(34,197,94,.18), rgba(34,197,94,.75), rgba(34,197,94,.18));
+      opacity:.92;
+    }
+    .stripe-h{
+      position:absolute;
+      left:0; right:0;
+      top:52%;
+      height:18px;
+      background: linear-gradient(90deg, rgba(34,197,94,.25), rgba(34,197,94,.70), rgba(34,197,94,.25));
+      opacity:.88;
+    }
+
+    .lid{
+      position:absolute;
+      top:0; left:-7px; right:-7px;
+      height:60px;
+      border-radius:18px;
+      background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+      border: 1px solid rgba(255,255,255,.16);
+      transform-origin: 50% 100%;
+      transition: transform 850ms cubic-bezier(.2,.95,.2,1), top 850ms cubic-bezier(.2,.95,.2,1);
+    }
+
+    .bowWrap{
+      position:absolute;
+      top:14px; left:50%;
+      transform: translateX(-50%);
+      width:80px; height:42px;
+      pointer-events:none;
+    }
+    .bow{
+      position:absolute;
+      top:0; width:38px; height:28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.5), rgba(34,197,94,.80));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+    }
+    .bow.left{ left:0; transform: rotate(-18deg); }
+    .bow.right{ right:0; transform: rotate(18deg); }
+    .knot{
+      position:absolute;
+      left:50%; top:11px;
+      transform: translateX(-50%);
+      width:18px; height:18px;
+      border-radius:6px;
+      background: rgba(34,197,94,.92);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+
+    /* Open state */
+    .gift.open .lid{
+      top:-34px;
+      transform: rotateX(78deg) rotateZ(-10deg);
+    }
+
+    /* Glow ring behind gift */
+    .halo{
+      position:absolute;
+      width:340px; height:340px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(34,197,94,.22), rgba(34,211,238,.12), rgba(167,139,250,.10), transparent 62%);
+      filter: blur(10px);
+      opacity:.85;
+      animation: halo 2.8s ease-in-out infinite;
+      z-index:-1;
+    }
+    @keyframes halo{
+      0%,100%{ transform: scale(0.98); opacity:.75; }
+      50%{ transform: scale(1.05); opacity:1; }
+    }
+
+    /* Message */
+    .msg{
+      position:absolute;
+      bottom:18px;
+      left:50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 560px;
+      text-align:center;
+      opacity:0;
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+    .msg.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(-8px);
+    }
+    .badge-successx{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background: rgba(34,197,94,.16);
+      border: 1px solid rgba(34,197,94,.36);
+      color: #bbf7d0;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .msg h3{ font-weight:900; margin:0; font-size:22px; }
+    .msg p{ margin:8px 0 0; }
+
+    .footer-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:14px;
+    }
+    .btnx{ border-radius: 12px; font-weight:800; padding:10px 14px; }
+    .hint{ font-size:14px; color:rgba(229,231,235,.75); text-align:center; margin-top:10px; }
+    .small-note{ font-size:12px; color:rgba(229,231,235,.55); text-align:center; margin-top:10px; }

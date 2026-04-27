@@ -1,0 +1,55 @@
+/* Alexandria Font - Primary Font */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'main.css';
+@import 'util.css';
+@import '../vendor/slick/slick.css';
+
+/* this not  */
+/* @import '@fortawesome/fontawesome-free/css/all.min.css'; */
+@import '../fonts/font-awesome-4.7.0/css/font-awesome.min.css';
+@import '../fonts/iconic/css/material-design-iconic-font.min.css';
+@import '../vendor/css-hamburgers/hamburgers.min.css';
+@import '../vendor/animate/animate.css';
+@import '../vendor/select2/select2.min.css';
+@import '../vendor/daterangepicker/daterangepicker.css';
+@import '../vendor/MagnificPopup/magnific-popup.css';
+@import '../vendor/perfect-scrollbar/perfect-scrollbar.css';
+
+/* Set Alexandria as Primary Font - Scoped to text elements only to preserve icon fonts */
+body,
+html,
+p,
+span,
+a,
+button,
+input,
+textarea,
+select,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+section,
+article,
+header,
+footer,
+nav,
+main,
+aside,
+table,
+th,
+td,
+li,
+ul,
+ol,
+dl,
+dt,
+dd {
+    font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
